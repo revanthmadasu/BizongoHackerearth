@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="md-form active-pink active-pink-2 mb-3" style="margin: 10px">
+        <input class="form-control col-md-6" type="search" id="search1" aria-label="Search" [(ngModel)]="searchText" mdbInput (keypress)="search()" (click)="search()">
+        <label for="search1">Search Games Here</label>
+      </div>
+<div *ngFor="let game of this.videoGames | search:searchText">
+    <div class="bs-example">
+        <div class="card">
+        <!--<div class="card-header">Featured</div>-->
+        
+            <div class="card-body text-center">
+                <img src="/assets/images/gameIcon.jpg" class="card-img-left" alt="..." style="width:200px;height:200px; float:left">
+                <h5 class="card-title col-sm-6">{{game.name}}</h5>
+                <p class="card-text col-sm-6">{{game.platform}}</p>
+                <p class="card-text col-sm-6">{{game.genre}}</p>
+                <a href="#" class="btn btn-primary">Know more</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
